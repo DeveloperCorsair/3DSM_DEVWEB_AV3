@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 @Component
 public class Resolvedor {
 
-	/** Recurso citado na URL: se não existir, 404. */
+	/** URL: se não existir, 404. */
 	public <T> T obter(JpaRepository<T, Long> repositorio, Long id, String nome) {
 		return repositorio.findById(id).orElseThrow(
 				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, nome + " " + id + " não encontrado(a)"));

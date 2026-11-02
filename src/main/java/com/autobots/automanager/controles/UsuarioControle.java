@@ -148,7 +148,7 @@ public class UsuarioControle extends RecursoControle<Usuario> {
 		modelo.add(item.slash("mercadorias").withRel("mercadorias"));
 	}
 
-	// ---- veículos e vendas do usuário -----------------------------------------
+	// veículos e vendas do usuário 
 
 	@GetMapping("/{id}/veiculos")
 	public ResponseEntity<CollectionModel<EntityModel<Veiculo>>> veiculos(@PathVariable("id") Long id) {
@@ -174,7 +174,7 @@ public class UsuarioControle extends RecursoControle<Usuario> {
 				Modelos.colecao(vendas, VendaControle.class, Venda::getId, raiz().slash(id).slash("vendas")));
 	}
 
-	// ---- mercadorias fornecidas (usuários com perfil FORNECEDOR) ---------------
+	// mercadorias fornecidas (usuários com perfil FORNECEDOR)
 
 	@GetMapping("/{id}/mercadorias")
 	public ResponseEntity<CollectionModel<EntityModel<Mercadoria>>> mercadorias(@PathVariable("id") Long id) {

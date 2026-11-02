@@ -17,7 +17,7 @@ public final class Modelos {
 	}
 
 	/**
-	 * Monta uma coleção HATEOAS em que cada item tem um link "self" apontando para o
+	 * Monta uma coleção em que cada item tem um link "self" apontando para o
 	 * seu controlador de origem.
 	 */
 	public static <T> CollectionModel<EntityModel<T>> colecao(Collection<T> itens, Class<?> controladorDosItens,

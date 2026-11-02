@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
- * CRUD completo com HATEOAS para uma entidade. Cada controlador concreto só
+ * CRUD completo para uma entidade. Cada controlador concreto só
  * informa o repositório e as regras específicas da entidade.
  *
  * GET /recurso, GET /recurso/{id}, POST /recurso, PUT /recurso/{id} e DELETE
@@ -37,7 +37,7 @@ public abstract class RecursoControle<T> {
 		this.controlador = controlador;
 	}
 
-	// ---- pontos de extensão -------------------------------------------------
+	// pontos de extensão 
 
 	protected abstract JpaRepository<T, Long> repositorio();
 
@@ -66,7 +66,7 @@ public abstract class RecursoControle<T> {
 		return repositorio().findAll();
 	}
 
-	// ---- apoio ----------------------------------------------------------------
+	// apoio 
 
 	protected WebMvcLinkBuilder raiz() {
 		return linkTo(controlador);
@@ -86,7 +86,7 @@ public abstract class RecursoControle<T> {
 		return modelo;
 	}
 
-	// ---- endpoints ------------------------------------------------------------
+	// endpoints 
 
 	@GetMapping
 	public ResponseEntity<CollectionModel<EntityModel<T>>> listar(@RequestParam Map<String, String> filtros) {

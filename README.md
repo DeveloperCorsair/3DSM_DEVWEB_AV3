@@ -1,6 +1,6 @@
-# automanager – atualização de base (ATVIII)
+# automanager – (ATVIII)
 
-CRUD completo + HATEOAS para as entidades do diagrama de classes (Figura 1).
+CRUD completo + HATEOAS para as entidades do diagrama de classes.
 
 ## Como rodar
 
@@ -77,4 +77,4 @@ Todas as respostas são `EntityModel`/`CollectionModel` (HAL) com links `self`, 
 
 ## Observação
 
-Senhas continuam em texto puro; isso fica para a "atualização de segurança".
+Senhas continuam em texto puro.

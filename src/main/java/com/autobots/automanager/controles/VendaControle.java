@@ -85,8 +85,7 @@ public class VendaControle extends RecursoControle<Venda> {
 		venda.setId(id);
 	}
 
-	// ---- resolução das referências enviadas no JSON ------------------------------
-
+	// resolução das referências enviadas no JSON 
 	private Usuario resolverUsuario(Usuario referencia, String campo) {
 		Long id = referencia == null ? null : referencia.getId();
 		return resolvedor.referenciar(repositorioUsuario, id, campo);
@@ -208,7 +207,7 @@ public class VendaControle extends RecursoControle<Venda> {
 		modelo.add(item.slash("servicos").withRel("servicos"));
 	}
 
-	// ---- itens da venda ---------------------------------------------------------
+	// itens da venda 
 
 	@GetMapping("/{id}/mercadorias")
 	public ResponseEntity<CollectionModel<EntityModel<Mercadoria>>> mercadorias(@PathVariable("id") Long id) {

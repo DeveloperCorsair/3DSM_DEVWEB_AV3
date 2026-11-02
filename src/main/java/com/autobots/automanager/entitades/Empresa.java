@@ -33,7 +33,7 @@ public class Empresa {
 	@Column(nullable = false)
 	private Date cadastro;
 	// usuários e mercadorias existem independentes da empresa: ao excluir a empresa
-	// eles apenas são desassociados (sem CascadeType.REMOVE)
+	// eles apenas são desassociados
 	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
 	private Set<Usuario> usuarios = new HashSet<>();
 	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })

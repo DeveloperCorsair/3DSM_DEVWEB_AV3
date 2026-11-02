@@ -107,7 +107,7 @@ public class EmpresaControle extends RecursoControle<Empresa> {
 		modelo.add(item.slash("vendas").withRel("vendas"));
 	}
 
-	// ---- usuários da empresa --------------------------------------------------
+	// usuários da empresa
 
 	@GetMapping("/{id}/usuarios")
 	public ResponseEntity<CollectionModel<EntityModel<Usuario>>> usuarios(@PathVariable("id") Long id) {
@@ -131,7 +131,7 @@ public class EmpresaControle extends RecursoControle<Empresa> {
 		return desassociar(id, usuarioId, Empresa::getUsuarios, Usuario::getId);
 	}
 
-	// ---- mercadorias da empresa -----------------------------------------------
+	//  mercadorias da empresa
 
 	@GetMapping("/{id}/mercadorias")
 	public ResponseEntity<CollectionModel<EntityModel<Mercadoria>>> mercadorias(@PathVariable("id") Long id) {
@@ -155,7 +155,7 @@ public class EmpresaControle extends RecursoControle<Empresa> {
 		return desassociar(id, mercadoriaId, Empresa::getMercadorias, Mercadoria::getId);
 	}
 
-	// ---- serviços da empresa --------------------------------------------------
+	//  serviços da empresa 
 
 	@GetMapping("/{id}/servicos")
 	public ResponseEntity<CollectionModel<EntityModel<Servico>>> servicos(@PathVariable("id") Long id) {
@@ -179,7 +179,7 @@ public class EmpresaControle extends RecursoControle<Empresa> {
 		return desassociar(id, servicoId, Empresa::getServicos, Servico::getId);
 	}
 
-	// ---- vendas da empresa ----------------------------------------------------
+	//  vendas da empresa 
 
 	@GetMapping("/{id}/vendas")
 	public ResponseEntity<CollectionModel<EntityModel<Venda>>> vendas(@PathVariable("id") Long id) {
@@ -203,7 +203,7 @@ public class EmpresaControle extends RecursoControle<Empresa> {
 		return desassociar(id, vendaId, Empresa::getVendas, Venda::getId);
 	}
 
-	// ---- apoio ----------------------------------------------------------------
+	//  apoio 
 
 	private <I> ResponseEntity<EntityModel<Empresa>> associar(Long empresaId, Long itemId, String nomeDoItem,
 			JpaRepository<I, Long> repositorioDoItem, List<Empresa> empresasDoItem,

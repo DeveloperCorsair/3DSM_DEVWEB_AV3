@@ -47,7 +47,7 @@ public class Usuario {
 	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
 	private Set<Mercadoria> mercadorias = new HashSet<>();
 	// Lado inverso das relações: quem manda é Venda.cliente e Veiculo.proprietario.
-	// Ficam fora do JSON (evita ciclos); a navegação é feita pelos links HATEOAS.
+	// Ficam fora do JSON (evita ciclos)
 	@JsonIgnore
 	@ToString.Exclude
 	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
